@@ -296,9 +296,77 @@ The above commands should look similar to this:
 
 ![mySQL commands](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/547f86fa-02e7-4f0b-9670-bb74a82cdd67)
 
+Type <b>exit</b> to leave the mysql prompt. 
+
 </details>
 
 <br>
 
 ## Installing pHp
 
+<details>
+<summary>Click to see steps</summary>
+
+While still in the <b>Instance Connect</b> browser ssh client, we can continue the project by installing <b>pHp</b>. If prompted, type <b>Y</b> to continue:
+
+```
+sudo apt-get install php php-mysqli
+```
+
+<b>Note</b>: This may take some time to complete.
+
+<br>
+
+To see the <b>pHp version</b>:
+
+```
+php -v
+```
+![php -v](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/3a0238a2-e10f-4cd6-b2ee-29714223fceb)
+
+<br>
+
+Let's create a sample .php file to see our pHp configure and check if it's working.
+
+Navigate to the root of our webserver.
+
+```
+cd /var/www/html
+```
+
+Then create the file.
+
+```
+sudo nano info.php
+```
+
+![root](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/b1069fb0-49e3-4bc6-b62a-d6cfe5814cfd)
+
+<br>
+
+Code the following:
+
+```
+<?php
+ echo phpinfo()
+?>
+```
+
+![info php](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d0285ed7-f361-43fd-a507-400139390139)
+
+Press <b>Ctrl+X</b> to <b>Save</b>, then <b>Y</b> to <b>Confirm</b> and <b>Enter</b> to exit from nano. 
+
+<br>
+
+To check if the <b>info.php</b> file is working, open a new web browser or tab in your current browser, enter the <b>Public IPv4 DNS</b> URL and add /info.php to the end:
+- eg. <b>ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com/info.php</b>
+
+![pHp Version](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/84c3ded2-1442-4817-a338-0d3173d44db7)
+
+It's working! On to the last step!!
+
+</details>
+
+<br>
+
+## 
