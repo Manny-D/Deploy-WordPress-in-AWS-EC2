@@ -229,7 +229,7 @@ No changes should be made here, click <b>Connect</b> (on the bottom right).
 
 ![Connect to Instance](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/3d7f06ab-12a7-4205-8e95-1e31de2b2ed1)
 
-We'll now be is the Linux instance via the AWS web browser ssh client. 
+We'll now be in the Linux instance via the AWS web browser ssh client. 
 
 ![web ssh](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d46bf31e-0406-47cd-bf89-70f6572a65ab)
 
@@ -369,4 +369,63 @@ It's working! On to the last step!!
 
 <br>
 
-## 
+## Installing WordPress
+
+Go back to the AWS web browser ssh client, and let's change to the home folder:
+
+```
+cd /home
+```
+
+Download the latest version of WordPress:
+
+```
+sudo wget https://wordpress.org/latest.tar.gz
+```
+
+![WordPress tar file](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e65b3562-83aa-4444-8923-d2e46ec0cd39)
+
+<br>
+
+Confirm the file was downloaded, then uncompress it:
+
+```
+ls -l
+sudo tar xvf latest.tar.gz
+```
+
+<b>Note</b>: This may take some time to complete.
+
+<br>
+
+Confirm that there is now a Wordpress folder, change to that directory, copy the files to the root webserver folder and confirm the files were copied:
+
+```
+ls -la
+cd wordpress
+sudo cp -R . /var/www/html/
+sudo ls /var/www/html/
+```
+
+![WordPress files](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/9ef65212-b01b-4aef-bba3-533a8f13367e)
+
+<br>
+
+Finally, we need to delete the <b>index.html</b> file in the webserver root folder. It was created during the Apache Webserver installtion and will conflict with the WordPress installation. Then we'll set the permissions for the WordPress files:
+
+```
+sudo rm /var/www/html/index.html
+sudo chown -R www-data:www-data /var/www/html/
+```
+
+![WordPress files 2](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e0f4a672-633a-42dd-9f98-92a3a21445f6)
+
+<br>
+
+Open a new web browser or tab in your current browser and navigate to the <b>Public IPv4 DNS</b> URL.
+- eg. <b>ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com</b>
+
+You should now see the first step of the WordPress setup, the Language configuration page. Choose your language and press <b>Continue</b>.
+
+![WordPress Language Page](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/fb6d20f9-d7f9-4f0c-a165-0de3a5bb8650)
+
