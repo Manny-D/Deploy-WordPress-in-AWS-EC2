@@ -48,7 +48,7 @@ Login to the AWS Management Console using the (default) <b>Root user</b> option.
 ## Create an Elastic Cloud Compute instance
 
 <details>
-<summary>Details</summary>
+<summary>Click to see steps</summary>
 
 <br>
 
@@ -119,13 +119,14 @@ Great! Our AWS EC2 instance is now ready to install the various software for the
 
 <b>Note</b>: copy both the <b>Public IPv4 address</b> and <b>Public IPv4 DNS</b> URL, as well be using them shortly!
 
-<br>
 </details>
+
+<br>
 
 ## Installing Apache Webserver
 
 <details>
-<summary>Details</summary>
+<summary>Click to see steps</summary>
 
 The following steps will be done via a command line. As I am on a MAC, the following screenshot will be of iTerm. If you are on Windows, utilize Command Prompt.
 
@@ -218,7 +219,7 @@ Amazing.. it works!!
 ## Installing mySQL
 
 <details>
-<summary>Details</summary>
+<summary>Click to see steps</summary>
 
 Navigate back to the <b>EC2 Dashboard</b> -> <b>Instances</b> -> <b>Instances</b> -> tick the box to the left of your Instance <b>Name</b> -> click <b>Connect</b> (top right)
 
