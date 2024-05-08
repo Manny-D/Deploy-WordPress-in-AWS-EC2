@@ -120,6 +120,9 @@ Great! Our AWS EC2 instance is now ready to install the various software for the
 
 ## Installing Apache Webserver
 
+<details>
+<summary>Details</summary>
+
 The following steps will be done via a command line. As I am on a MAC, the following screenshot will be of iTerm. If you are on Windows, utilize Command Prompt.
 
 Navigate to where you downloaded the .pem key pair file earlier. Mine defaulted to the Downloads folder, so I will enter the following:
@@ -203,6 +206,8 @@ You should see the following page load:
 ![Apache](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/31ff7427-926f-44d2-9698-d63f11bf58f5)
 
 Amazing.. it works!!
+
+</details>
 
 <br>
 
