@@ -1,4 +1,4 @@
-# Deploying a WordPress website in an AWS EC2 instance
+# Deploying a WordPress site into an AWS EC2 instance
 
 ![Wordpress AWS Header Image](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/28db9df8-07bc-487c-864b-8ae72d97e433)
 
@@ -6,14 +6,42 @@
 
 ## Description
 
-In this project, we will Install Apache, PHP and MySQL server in a Linux instance and perform all configurations.
+In this project, we will Install Apache, PHP, MySQL server and Wordpress in an EC2 Linux instance, and make it available publicly for all users on the internet.
 
-Install Wordpress in a EC2 Linux instance and make it available publicly for all users on the internet.
+<br>
 
-By the end of this course, you will be able to have a WordPress website installed and publicly available.
+## Create an Amazon Web Services Account
 
-It assumes the following:
-- you already have an AWS account to use
+If you already have an AWS Account, skip to the next part. If not, expand <b>Details</b> below to see more.
+<details>
+<summary>Details</summary>
+ 
+<br>  
+
+If you do not already have an AWS account, navigate to the following page to create one [https://aws.amazon.com/free](https://aws.amazon.com/free) and click on either Complete Signup or Create a Free Account.
+
+![AWS Sign Up](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/60c3c592-9e8a-44d5-a7c8-74284d8cdc30)
+
+When on the <b>Contact Information</b> page, select <b>Personal</b> for the Account type.
+ 
+![Account Type](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/feaadbb9-de42-4ebb-b6c0-6901c0337891)
+
+<b>Note</b>: you will be prompted to enter in credit card info. This is for identity verification and the card will only be charged if you exceed the Free Tier limits.
+
+![CC](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/d31dd4ae-82db-4079-bdd0-c69649451c52)
+
+Next you will be prompted to confirm your identity via a SMS code, then will be taken to the <b>Select a support plan</b> page, leave it at <b>Basic support - Free</b> and click <b>Complete sign up</b>.
+
+![Free Tier](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/81256aff-4cfc-4697-8334-2cef1eef592c)
+
+Sign up completed! Click on <b>Go to the AWS Management Console</b>.
+
+![Sign up congrats](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/d60ae22b-4e1d-4235-9b3d-f30a36ec67aa)
+
+Login to the AWS Management Console using the (default) <b>Root user</b> option. 
+
+![Root user](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/f25d606b-96dd-42d9-85b3-a845951d3244)
+</details>
 
 <br>
 
@@ -38,7 +66,7 @@ Under <b>Application and OS Images (Amazon Machine Image)</b>, do the following:
 
 - Click <b>Ubuntu</b>
 - Under <b>Amazon Machine Image (AMI)</b>: (leave the default of <b>Ubuntu Server 24.04 LTS (HVM), SSD Volume Type</b>)
-- Under Architecture: (leave the default of <b>64-bit (x86)</b>)
+- Under <b>Architecture</b>: (leave the default of <b>64-bit (x86)</b>)
 
 <br>
 
@@ -54,7 +82,7 @@ In the <b>Create key pair</b> popup, do the following:
 
 ![Create Key Pair](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/abe4238f-a055-4da3-8690-be8f2dc99c93)
 
-- <b>Name</b>: (enter in something you'll remember - eg. <b>masterKP</b>)
+- <b>Name</b>: (enter in something you'll remember - eg. <b>masterkp</b>)
 - <b>Key pair type</b>: (leave the default setting <b>(RSA)</b>)
 - <b>Private key file format</b>: (leave the default setting <b>(.pem)</b>)
 - Click <b>Create key pair</b>
@@ -70,7 +98,7 @@ Under <b>Network settings</b>, to allow our WordPress site to be accessible on t
 
 Leave the defaults for all the remaining settings, look to the right of the wizard and click <b>Launch instance</b>. 
 
-A similar page should load. 
+Once completed, a similar page should load.
 
 ![View all instances](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/6405186e-cea1-49c3-8956-e6732a267138)
 
@@ -81,7 +109,5 @@ Click <b>View all instances</b> to see the EC2 instances list.
 Click on the <b>Instance ID</b> to see it in more detail.
 
 ![Instances summary](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/8738ac30-b70e-4750-8e7c-d427808b8a2b)
-
-![Instance Summary](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/ea2705c8-1c93-41db-a202-35ce5d388f2e)
 
 <br>
