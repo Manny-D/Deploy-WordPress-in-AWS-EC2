@@ -46,8 +46,12 @@ Login to the AWS Management Console using the (default) <b>Root user</b> option.
 <br>
 
 ## Create an Elastic Cloud Compute instance
+
 <details>
 <summary>Details</summary>
+
+<br>
+
 In the search bar, type <b>ec2</b> and click on <b>EC2</b>.
 
 ![Search EC2](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/067326a9-fe4a-450b-902d-c72f1b8b6560)
@@ -210,4 +214,90 @@ Amazing.. it works!!
 </details>
 
 <br>
+
+## Installing mySQL
+
+<details>
+<summary>Details</summary>
+
+Navigate back to the <b>EC2 Dashboard</b> -> <b>Instances</b> -> <b>Instances</b> -> tick the box to the left of your Instance <b>Name</b> -> click <b>Connect</b> (top right)
+
+![Instances Connect](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d421a4df-1e9c-45c2-9826-bef51865245e)
+
+No changes should be made here, click <b>Connect</b> (on the bottom right).
+
+![Connect to Instance](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/3d7f06ab-12a7-4205-8e95-1e31de2b2ed1)
+
+We'll now be is the Linux instance via the AWS web browser ssh client. 
+
+![web ssh](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d46bf31e-0406-47cd-bf89-70f6572a65ab)
+
+<br>
+
+To begin the installing mySQL, type:
+
+```
+sudo apt-get install mysql-server
+```
+
+If prompted, type <b>Y</b> to continue. This may take some time to complete.
+
+<br>
+
+We need to create a user for <b>Wordpress</b> and the <b>mySQL database</b>.
+
+```
+sudo mysql -u root
+```
+```
+create user "user123"@"%" identified by "pass123";
+```
+
+<b>*</b>Be sure to note these for later.
+
+<br>
+
+Next we'll give user123 the correct privileges to access the database. 
+
+```
+grant all privileges on *.* to "user123"@"%" with grant option;
+```
+
+<br>
+
+Run the following to refresh the privileges.
+
+```
+flush privileges;
+```
+
+<br>
+
+Let's create the database the WordPress will use.
+
+```
+create database wordpressdb;
+```
+
+<b>*</b>Be sure to note this for later.
+
+<br>
+
+Now to confirm the database was created.
+
+```
+show databases;
+```
+
+<br>
+
+The above commands should look similar to this:
+
+![mySQL commands](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/547f86fa-02e7-4f0b-9670-bb74a82cdd67)
+
+</details>
+
+<br>
+
+## Installing pHp
 
