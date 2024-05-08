@@ -128,6 +128,8 @@ Great! Our AWS EC2 instance is now ready to install the various software for the
 <details>
 <summary>Click to see steps</summary>
 
+<br>
+
 The following steps will be done via a command line. As I am on a MAC, the following screenshot will be of iTerm. If you are on Windows, utilize Command Prompt.
 
 Navigate to where you downloaded the .pem key pair file earlier. Mine defaulted to the Downloads folder, so I will enter the following:
@@ -206,6 +208,8 @@ sudo apt-get install apache2
 
 To confirm <b>Apache Web Server</b> was installed successfully, open a new web browser or tab in your current browser and enter the <b>Public IPv4 DNS</b> URL. 
 
+- eg. <b>ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com</b>
+
 You should see the following page load:
 
 ![Apache](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/31ff7427-926f-44d2-9698-d63f11bf58f5)
@@ -220,6 +224,8 @@ Amazing.. it works!!
 
 <details>
 <summary>Click to see steps</summary>
+
+<br>
 
 Navigate back to the <b>EC2 Dashboard</b> -> <b>Instances</b> -> <b>Instances</b> -> tick the box to the left of your Instance <b>Name</b> -> click <b>Connect</b> (top right)
 
@@ -307,6 +313,8 @@ Type <b>exit</b> to leave the mysql prompt.
 <details>
 <summary>Click to see steps</summary>
 
+<br>
+
 While still in the <b>Instance Connect</b> browser ssh client, we can continue the project by installing <b>pHp</b>. If prompted, type <b>Y</b> to continue:
 
 ```
@@ -371,6 +379,11 @@ It's working! On to the last step!!
 
 ## Installing WordPress
 
+<details>
+<summary>Click to see steps</summary>
+
+<br>
+
 Go back to the AWS web browser ssh client, and let's change to the home folder:
 
 ```
@@ -429,3 +442,41 @@ You should now see the first step of the WordPress setup, the Language configura
 
 ![WordPress Language Page](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/fb6d20f9-d7f9-4f0c-a165-0de3a5bb8650)
 
+You should have the following info available (from the installing mySQL section). Click <b>Let's go!</b> to continue. 
+
+![WP DB info](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/63e0b6d7-78e4-4105-ac08-e1c267fae9cc)
+
+Enter the requested info and leave <b>Database Host</b> and <b>Table Prefix</b> at their default setting. The press <b>Submit</b>.
+
+![WP DB info 2](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/932972f5-194b-48b1-853f-16b97494b065)
+
+Click <b>Run the installtion</b> on this page.
+
+![WP Installation](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/af858b0a-5fbd-407a-8f50-5f99d03994c9)
+
+Fill in the following:
+
+![WP Info](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/0328d5fb-f0af-4683-94ae-118edb75009c)
+
+- <b>Site Title</b>
+- <b>Username</b>
+- <b>Password</b> (this is auto-populated, but you can change it)
+- <b>Your Email</b>
+
+Press <b>Install WordPress</b>
+
+Success! Go ahead and log in.
+
+![WP Success](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e0ced491-d68a-4d06-977e-c2f0b77881d1)
+
+![Welcome to WordPress](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e4d02f0a-a79c-4275-802d-22c3a703724a)
+
+To see the auto-generated site, on the top left, hover over the <b>Site Title</b> you provided earlier -> click on <b>Visit Site</b>.
+
+![Visit Site](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/5335de5a-35ba-486f-a3c1-9074d8892921)
+
+Now you have a WordPress website running on an AWS EC2 instance!
+
+![WordPress sample page](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/36088ebc-ebc9-4a7e-919f-5224972643ac)
+
+</details>
