@@ -61,7 +61,7 @@ From the EC2 Dashboard, click on <b>Launch instance</b>.
 ![Launch Instance](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/f1d05095-a5b4-4735-bedc-c3ae098dfed4)
 
 ### Launch an instance wizard
-Under <b>Name and tags</b>, enter a <b>Name</b> something you'll remember - eg. <b>MyWebServer</b>
+Under <b>Name and tags</b>, enter a <b>Name</b>, something you'll remember - eg. <b>MyWebServer</b>
 
 ![Name and tags](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/c7b4284c-2b18-4c65-ac60-13d35b9f8c33)
 
@@ -70,8 +70,8 @@ Under <b>Application and OS Images (Amazon Machine Image)</b>, do the following:
 ![App and OS](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/b4f464ef-5f8d-4085-a419-d042c20fb198)
 
 - Click <b>Ubuntu</b>
-- Under <b>Amazon Machine Image (AMI)</b>: (leave the default of <b>Ubuntu Server 24.04 LTS (HVM), SSD Volume Type</b>)
-- Under <b>Architecture</b>: (leave the default of <b>64-bit (x86)</b>)
+- <b>Amazon Machine Image (AMI)</b>: (leave the default of <b>Ubuntu Server 24.04 LTS (HVM), SSD Volume Type</b>)
+- <b>Architecture</b>: (leave the default of <b>64-bit (x86)</b>)
 
 <br>
 
