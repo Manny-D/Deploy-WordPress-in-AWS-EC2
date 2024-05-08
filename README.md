@@ -46,7 +46,8 @@ Login to the AWS Management Console using the (default) <b>Root user</b> option.
 <br>
 
 ## Create an Elastic Cloud Compute instance
-
+<details>
+<summary>Details</summary>
 In the search bar, type <b>ec2</b> and click on <b>EC2</b>.
 
 ![Search EC2](https://github.com/Manny-D/Virtual-Private-Cloud-VPC/assets/99146530/067326a9-fe4a-450b-902d-c72f1b8b6560)
@@ -110,4 +111,98 @@ Click on the <b>Instance ID</b> to see it in more detail.
 
 ![Instances summary](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/8738ac30-b70e-4750-8e7c-d427808b8a2b)
 
+Great! Our AWS EC2 instance is now ready to install the various software for the project.
+
+<b>Note</b>: copy both the <b>Public IPv4 address</b> and <b>Public IPv4 DNS</b> URL, as well be using them shortly!
+
 <br>
+</details>
+
+## Installing Apache Webserver
+
+The following steps will be done via a command line. As I am on a MAC, the following screenshot will be of iTerm. If you are on Windows, utilize Command Prompt.
+
+Navigate to where you downloaded the .pem key pair file earlier. Mine defaulted to the Downloads folder, so I will enter the following:
+
+```
+cd Downloads
+```
+
+![Downloads](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/1285669b-00bd-46b5-8050-cc392cc62bf7)
+
+<br>
+
+Let's ssh into the Apache Webserver now, using the following:
+
+```
+ssh -i "yourkeypairfilename.pem" ubuntu@yourPublicIPv4address
+```
+
+![Ubuntu SSH](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d07e8a08-ae8d-4ce6-a290-3cccecd632d3)
+
+Type <b>yes</b> here and press Enter.
+
+<br>
+
+You may receive an error similar to this:
+
+![SSH Error](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/f569d8cc-bc5d-4a36-ac2f-1b8f52477a5a)
+
+This is usually because the .pem key is publicly visible - eg. on your Desktop or Downloads folder, so it's denied access as a security precaution.
+
+<br>
+
+To address this, we have to modify the .pem file permissions using either CHMOD 400 (read only) or 600 (read and write).
+
+```
+chmod 600 /Users/mymac/Downloads/masterKP.pem
+```
+
+Nothing will return to show it was successful, but if you try so <b>ssh</b> again, you will connect.  
+
+![CHMOD](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/37af217a-98df-4718-8aa7-ea9381c9b477)
+
+Now that were inside Linux, let's install an AWS package that will allow us to connect via a web browser called <b>Instance Connect</b>. 
+
+<br>
+
+First, we need to update and upgrade the Linux instance packages via the following commands:
+
+<b>Note</b>: these may take some time to complete and if prompted, type <b>Y</b> to continue
+
+```
+sudo apt-get update
+```
+then
+```
+sudo apt-get upgrade
+```
+
+<br>
+
+To install <b>Instance Connect</b>, type:
+
+```
+sudo apt-get install ec2-instance-connect
+```
+
+<br>
+
+Now to install the first piece of software to help host our <b>Wordpress</b> website, the <b>Apache Web Server</b>. If prompted, type <b>Y</b> to continue:
+
+```
+sudo apt-get install apache2
+```
+
+<br>
+
+To confirm <b>Apache Web Server</b> was installed successfully, open a new web browser or tab in your current browser and enter the <b>Public IPv4 DNS</b> URL. 
+
+You should see the following page load:
+
+![Apache](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/31ff7427-926f-44d2-9698-d63f11bf58f5)
+
+Amazing.. it works!!
+
+<br>
+
