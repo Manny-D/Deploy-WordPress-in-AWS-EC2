@@ -395,8 +395,7 @@ Download the latest version of WordPress:
 ```
 sudo wget https://wordpress.org/latest.tar.gz
 ```
-
-![WordPress tar file](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e65b3562-83aa-4444-8923-d2e46ec0cd39)
+![WordPress tar file](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/986aaa5a-2265-41bc-8d9d-ef194f808b6c)
 
 <br>
 
@@ -411,7 +410,11 @@ sudo tar xvf latest.tar.gz
 
 <br>
 
-Confirm that there is now a Wordpress folder, change to that directory, copy the files to the root webserver folder and confirm the files were copied:
+Then do the following: 
+- Confirm that there is now a Wordpress folder
+- Change to that directory
+- Copy the files to the root webserver folder
+- Confirm the files were copied to that folder
 
 ```
 ls -la
@@ -419,8 +422,7 @@ cd wordpress
 sudo cp -R . /var/www/html/
 sudo ls /var/www/html/
 ```
-
-![WordPress files](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/9ef65212-b01b-4aef-bba3-533a8f13367e)
+![WordPress files](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/2ea2ee89-1235-4623-aa32-ddf862283f01)
 
 <br>
 
