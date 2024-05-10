@@ -334,17 +334,12 @@ php -v
 
 <br>
 
-Let's create a sample .php file to see our pHp configure and check if it's working.
+### Create a sample .php file to view pHp configuration and confirm it's working
 
-Navigate to the root of our webserver.
+Navigate to the root of our webserver, then create the file.
 
 ```
 cd /var/www/html
-```
-
-Then create the file.
-
-```
 sudo nano info.php
 ```
 
@@ -352,7 +347,7 @@ sudo nano info.php
 
 <br>
 
-Code the following:
+In <b>nano</b>, code the following:
 
 ```
 <?php
@@ -362,12 +357,14 @@ Code the following:
 
 ![info php](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/d0285ed7-f361-43fd-a507-400139390139)
 
-Press <b>Ctrl+X</b> to <b>Save</b>, then <b>Y</b> to <b>Confirm</b> and <b>Enter</b> to exit from nano. 
+Press <b>Ctrl+X</b> to <b>Save</b>, then <b>Y</b> to <b>Confirm</b> and <b>Enter</b> to exit from <b>nano</b>. 
 
 <br>
 
-To check if the <b>info.php</b> file is working, open a new web browser or tab in your current browser, enter the <b>Public IPv4 DNS</b> URL and add /info.php to the end:
-- eg. <b>ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com/info.php</b>
+To check if the <b>info.php</b> file is working:
+- Open a new web browser or tab in your current browser
+- Enter the <b>Public IPv4 DNS</b> URL and add <b>/info.php</b> to the end
+   - eg. <b>ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com/info.php</b>
 
 ![pHp Version](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/84c3ded2-1442-4817-a338-0d3173d44db7)
 
@@ -433,7 +430,7 @@ sudo rm /var/www/html/index.html
 sudo chown -R www-data:www-data /var/www/html/
 ```
 
-![WordPress files 2](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/e0f4a672-633a-42dd-9f98-92a3a21445f6)
+![WordPress files 2](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/97bc600c-350d-444f-9747-17848e509789)
 
 <br>
 
