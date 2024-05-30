@@ -96,7 +96,7 @@ In the <b>Create key pair</b> popup, do the following:
 <br>
 
 Under <b>Network settings</b>, to allow our WordPress site to be accessible on the interet by web browsers:
-- check the box for <b>Allow HTTPS traffi from the internet</b> 
+- check the box for <b>Allow HTTPS traffic from the internet</b> 
 - check the box for <b>Allow HTTP traffic from the internet</b>
 
 ![Network settings](https://github.com/Manny-D/Deploy-WordPress-in-AWS-EC2/assets/99146530/52b06969-8144-4e2c-862e-50c4bd994405)
